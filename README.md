@@ -52,6 +52,17 @@ For end-to-end (e2e) testing, run:
 ng e2e
 ```
 
+
+Topic Used: 
+  Template Form
+  Form Validation
+  Control Flow Statement
+  API Integration
+  Routing- Default Route, Navigation
+  Dynamic Class
+
+  API's : freeprojectapi.com => UserApp.
+
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
 ## Additional Resources
