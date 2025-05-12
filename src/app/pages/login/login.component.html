@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="form-box">
+        <div class="toggle">
+            <button class="tab {{isLogin ? 'active' : ''}} " (click)="switchTab(true)">Login</button>
+            <button class="tab {{isLogin ? '' : 'active'}}" (click)="switchTab(false)">Sign Up</button>
+            <div [ngClass]="isLogin ? 'loginAnimation' : 'signupAnimation' " ></div>
+        </div>
+
+        <form id="login-form" class="form {{isLogin ? 'active' : ''}}">
+            <h2>Welcome Back</h2>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input #email="ngModel" [(ngModel)]="loginObject.emailId" name="emailId" type="email" placeholder="Email" required />
+                <div class="text-danger">
+                    @if (email.errors?.['required']) {
+                        <span class="error">Username is required</span>
+                    }
+                </div>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input #password="ngModel" [(ngModel)]="loginObject.password" name="password" type="password" placeholder="Password" required />
+                <div class="text-danger">
+                    @if (password.errors?.['required']) {
+                        <span class="error">Username is required</span>
+                    }
+                </div>
+                <i class="fas fa-eye toggle-password"></i>
+            </div>
+            <div class="options">
+                <label><input name="" type="checkbox" /> Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button (click)="onLogin()" type="button" class="login-btn">Login</button>
+            <p class="divider">Or login with</p>
+        </form>
+
+        <form id="signup-form" #signupForm="ngForm" class="form {{isLogin ? '' : 'active'}}">
+            <h2>Create Account</h2>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input [(ngModel)]="registerObject.fullName" #name="ngModel" name="fullName" type="text" placeholder="Username" required />
+                <div class="text-danger">
+                    @if (name.errors?.['required']) {
+                        <span class="error">Username is required</span>
+                    }
+                </div>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input [(ngModel)]="registerObject.emailId" #email="ngModel" name="emailId" type="email" placeholder="Email" required />
+                <div class="text-danger">
+                    @if (email.errors?.['required']) {
+                        <span class="error">Username is required</span>
+                    }
+                </div>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input [(ngModel)]="registerObject.password" #psswd="ngModel" name="password" type="password" placeholder="Password" required />
+                <div class="text-danger">
+                    @if (psswd.errors?.['required']) {
+                        <span class="error">Username is required</span>
+                    }
+                </div>
+            </div>
+            <!-- <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input [ngModel]="registerObject.password" name="" type="password" placeholder="Confirm Password" required />
+            </div> -->
+            <button (click)="onSignup()" type="button" [disabled]="signupForm.invalid" class="login-btn">Sign Up</button>
+        </form>
+    </div>
+</div>

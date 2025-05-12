@@ -54,12 +54,12 @@ ng e2e
 
 
 Topic Used: 
-  Template Form
-  Form Validation
-  Control Flow Statement
-  API Integration
-  Routing- Default Route, Navigation
-  Dynamic Class
+  Template Form,
+  Form Validation,
+  Control Flow Statement,
+  API Integration,
+  Routing- Default Route, Navigation,
+  Dynamic Class,
 
   API's : freeprojectapi.com => UserApp.
 
